@@ -21,19 +21,18 @@
  */
 package org.jboss.test.ws.jaxws.samples.serviceref;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebServiceException;
-import javax.xml.ws.BindingProvider;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.soap.SOAPBinding;
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class ServletClient extends HttpServlet

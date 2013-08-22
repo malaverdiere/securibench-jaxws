@@ -21,9 +21,9 @@
  */
 package org.jboss.test.ws.jaxws.samples.advanced.retail.handler;
 
-import javax.xml.ws.handler.MessageContext;
-
 import org.jboss.ws.api.handler.GenericSOAPHandler;
+
+import javax.xml.ws.handler.MessageContext;
 
 public class SOAPMessageTrace extends GenericSOAPHandler
 {

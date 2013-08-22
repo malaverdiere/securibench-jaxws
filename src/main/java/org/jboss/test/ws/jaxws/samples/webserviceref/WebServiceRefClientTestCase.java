@@ -21,33 +21,22 @@
  */
 package org.jboss.test.ws.jaxws.samples.webserviceref;
 
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.net.URL;
-
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-
-import junit.framework.Test;
-
-
-import org.jboss.wsf.test.JBossWSTestHelper;
-
-
 /**
  * Test the JAXWS annotation: javax.xml.ws.WebServiceref
  *
  * @author Thomas.Diesler@jboss.com
  * @since 23-Oct-2005
  */
-public class WebServiceRefClientTestCase extends JBossWSTest
+public class WebServiceRefClientTestCase extends HttpServlet
 {
-   public final String TARGET_ENDPOINT_ADDRESS = "http://" + getServerHost() + ":8080/jaxws-samples-webserviceref";
+   public final String TARGET_ENDPOINT_ADDRESS = "http://localhost:8080/jaxws-samples-webserviceref";
 
-   public static Test suite()
-   {
-      return new JBossWSTestSetup(WebServiceRefClientTestCase.class, "jaxws-samples-webserviceref.war");
-   }
 
    public void testGeneratedService() throws Exception
    {

@@ -21,13 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.webservicerefsec;
 
+import javax.annotation.security.RolesAllowed;
+import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
-
-import javax.annotation.security.RolesAllowed;
-import javax.ejb.Stateless;
 
 @WebService(name = "Endpoint", serviceName = "EndpointService", targetNamespace = "http://org.jboss.ws/wsref")
 @SOAPBinding(style = Style.RPC)

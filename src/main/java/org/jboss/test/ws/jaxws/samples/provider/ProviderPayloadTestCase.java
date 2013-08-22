@@ -21,42 +21,27 @@
  */
 package org.jboss.test.ws.jaxws.samples.provider;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import javax.xml.bind.JAXBException;
-import javax.xml.namespace.QName;
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.SOAPConnection;
-import javax.xml.soap.SOAPConnectionFactory;
-import javax.xml.soap.SOAPEnvelope;
-import javax.xml.soap.SOAPHeader;
-import javax.xml.soap.SOAPMessage;
-import javax.xml.transform.Source;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.ws.Dispatch;
-import javax.xml.ws.Service;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.Service.Mode;
-import javax.xml.ws.soap.SOAPBinding;
-
-import junit.framework.Test;
-
-
-
-
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import javax.servlet.http.HttpServlet;
+import javax.xml.bind.JAXBException;
+import javax.xml.namespace.QName;
+import javax.xml.soap.*;
+import javax.xml.transform.Source;
+import javax.xml.ws.Dispatch;
+import javax.xml.ws.Service;
+import javax.xml.ws.Service.Mode;
+import javax.xml.ws.soap.SOAPBinding;
+import java.io.ByteArrayInputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 /**
  * Test a Provider<SOAPMessage>
  *
  * @author Thomas.Diesler@jboss.org
  * @since 29-Jun-2006
  */
-public class ProviderPayloadTestCase extends JBossWSTest
+public class ProviderPayloadTestCase extends HttpServlet
 {
    private String reqString =
       "<ns1:somePayload xmlns:ns1='http://org.jboss.ws/provider'>Hello</ns1:somePayload>";
@@ -64,10 +49,6 @@ public class ProviderPayloadTestCase extends JBossWSTest
    private String resString =
       "<ns1:somePayload xmlns:ns1='http://org.jboss.ws/provider'>Hello:Inbound:LogicalSourceHandler:Outbound:LogicalSourceHandler</ns1:somePayload>";
 
-   public static Test suite()
-   {
-      return new JBossWSTestSetup(ProviderPayloadTestCase.class, "jaxws-samples-provider-payload.war");
-   }
 
    public void testProviderMessage() throws Exception
    {
@@ -80,7 +61,7 @@ public class ProviderPayloadTestCase extends JBossWSTest
       SOAPConnection con = SOAPConnectionFactory.newInstance().createConnection();
       SOAPMessage reqMsg = msgFactory.createMessage(null, new ByteArrayInputStream(reqEnvStr.getBytes()));
 
-      URL epURL = new URL("http://" + getServerHost() + ":8080/jaxws-samples-provider-payload");
+      URL epURL = new URL("http://localhost:8080/jaxws-samples-provider-payload");
       SOAPMessage resMsg = con.call(reqMsg, epURL);
       SOAPEnvelope resEnv = resMsg.getSOAPPart().getEnvelope();
 
@@ -100,7 +81,7 @@ public class ProviderPayloadTestCase extends JBossWSTest
       String targetNS = "http://org.jboss.ws/provider";
       QName serviceName = new QName(targetNS, "ProviderService");
       QName portName = new QName(targetNS, "ProviderPort");
-      URL endpointAddress = new URL("http://" + getServerHost() + ":8080/jaxws-samples-provider-payload/" + target);
+      URL endpointAddress = new URL("http://localhost:8080/jaxws-samples-provider-payload/" + target);
 
       Service service = Service.create(serviceName);
       service.addPort(portName, SOAPBinding.SOAP11HTTP_BINDING, endpointAddress.toExternalForm());

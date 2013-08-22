@@ -21,14 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.handlerchain;
 
-import java.util.Arrays;
+import org.jboss.ws.api.handler.GenericSOAPHandler;
 
 import javax.xml.soap.MimeHeaders;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-
-import org.jboss.ws.api.handler.GenericSOAPHandler;
 
 /**
  * A client side handler

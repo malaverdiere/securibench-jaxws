@@ -21,11 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.context;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.net.URI;
-import java.security.Principal;
-
 import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
@@ -40,9 +35,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.MessageContext;
-
-import org.w3c.dom.Element;
-import org.xml.sax.InputSource;
+import java.security.Principal;
 
 @Stateless
 @SOAPBinding(style = Style.RPC)

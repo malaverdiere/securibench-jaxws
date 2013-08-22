@@ -21,12 +21,11 @@
  */
 package org.jboss.test.ws.jaxws.samples.exception;
 
-import java.net.URL;
+import org.jboss.test.ws.jaxws.samples.exception.client.ExceptionEndpoint;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-
-import org.jboss.test.ws.jaxws.samples.exception.client.ExceptionEndpoint;
+import java.net.URL;
 
 public class ExceptionEJB3Helper extends ExceptionHelper
 {

@@ -21,8 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.eardeployment;
 
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.wsdl.Definition;
 import javax.wsdl.factory.WSDLFactory;
@@ -30,8 +28,7 @@ import javax.wsdl.xml.WSDLReader;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
+import java.net.URL;
 
 
 

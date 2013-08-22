@@ -21,12 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.handlerchain;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.jws.HandlerChain;
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
@@ -35,6 +29,11 @@ import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.handler.Handler;
 import javax.xml.ws.handler.HandlerResolver;
 import javax.xml.ws.handler.PortInfo;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HandlerChainClient extends HttpServlet
 {

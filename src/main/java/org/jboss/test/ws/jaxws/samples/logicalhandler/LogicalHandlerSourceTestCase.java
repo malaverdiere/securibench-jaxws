@@ -21,13 +21,10 @@
  */
 package org.jboss.test.ws.jaxws.samples.logicalhandler;
 
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
+import java.net.URL;
 
 
 

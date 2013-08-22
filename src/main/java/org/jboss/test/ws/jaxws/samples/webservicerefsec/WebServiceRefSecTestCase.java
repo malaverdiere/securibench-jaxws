@@ -21,13 +21,10 @@
  */
 package org.jboss.test.ws.jaxws.samples.webservicerefsec;
 
+import javax.servlet.http.HttpServlet;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-
-import junit.framework.Test;
-
-
 
 
 /**
@@ -36,14 +33,10 @@ import junit.framework.Test;
  * @author alessio.soldano@jboss.com
  * @since 12-May-2010
  */
-public class WebServiceRefSecTestCase extends JBossWSTest
+public class WebServiceRefSecTestCase extends HttpServlet
 {
-   public final String TARGET_ENDPOINT_ADDRESS = "http://" + getServerHost() + ":8080/jaxws-samples-webservicerefsec";
+   public final String TARGET_ENDPOINT_ADDRESS = "http://localhost:8080/jaxws-samples-webservicerefsec";
 
-   public static Test suite()
-   {
-      return new JBossWSTestSetup(WebServiceRefSecTestCase.class, "jaxws-samples-webservicerefsec.jar", true);
-   }
 
    public void testServletClient() throws Exception
    {

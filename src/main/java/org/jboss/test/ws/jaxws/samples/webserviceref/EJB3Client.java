@@ -21,8 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.webserviceref;
 
-import java.util.ArrayList;
-
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.naming.InitialContext;
@@ -30,6 +28,7 @@ import javax.naming.NamingException;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.WebServiceRefs;
+import java.util.ArrayList;
 
 // standard EJB3 annotations
 @Remote(EJB3Remote.class)

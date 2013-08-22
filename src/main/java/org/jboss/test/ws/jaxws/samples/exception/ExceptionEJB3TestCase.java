@@ -21,10 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.exception;
 
-import junit.framework.Test;
-
-
-
 /**
  * Test JAX-WS exception handling with EJB3 endpoints
  *

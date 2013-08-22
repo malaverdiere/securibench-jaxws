@@ -21,13 +21,13 @@
  */
 package org.jboss.test.ws.jaxws.samples.logicalhandler;
 
+import org.jboss.ws.api.handler.GenericLogicalHandler;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.LogicalMessageContext;
 import javax.xml.ws.handler.MessageContext;
-
-import org.jboss.ws.api.handler.GenericLogicalHandler;
 
 public class LogicalJAXBHandler extends GenericLogicalHandler
 {

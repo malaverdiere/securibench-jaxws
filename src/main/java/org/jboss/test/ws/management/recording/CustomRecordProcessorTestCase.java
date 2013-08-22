@@ -21,13 +21,12 @@
  */
 package org.jboss.test.ws.management.recording;
 
-import java.net.URL;
-
 import javax.management.MBeanServerConnection;
 import javax.management.ObjectName;
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
+import java.net.URL;
 
 /**
  * This test case shows how to dynamically add a custom record processor

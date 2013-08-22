@@ -21,11 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.exception;
 
-import junit.framework.Test;
-
-
-
-
 import javax.servlet.http.HttpServlet;
 
 /**

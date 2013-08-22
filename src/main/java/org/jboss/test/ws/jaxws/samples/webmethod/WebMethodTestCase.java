@@ -21,26 +21,18 @@
  */
 package org.jboss.test.ws.jaxws.samples.webmethod;
 
-import java.io.ByteArrayInputStream;
-import java.io.StringReader;
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.SOAPConnection;
-import javax.xml.soap.SOAPConnectionFactory;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPFault;
-import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.*;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
 import javax.xml.ws.Service.Mode;
 import javax.xml.ws.soap.SOAPFaultException;
-
-import junit.framework.Test;
+import java.io.ByteArrayInputStream;
+import java.io.StringReader;
+import java.net.URL;
 
 
 

@@ -21,18 +21,14 @@
  */
 package org.jboss.test.ws.jaxws.samples.jaxbintros;
 
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.util.Collections;
-import java.util.Map;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
-
-import org.jboss.jaxb.intros.BindingCustomizationFactory;
+import java.io.ByteArrayInputStream;
+import java.util.Collections;
+import java.util.Map;
 
 
 /**

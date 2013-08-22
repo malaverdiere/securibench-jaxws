@@ -21,11 +21,10 @@
  */
 package org.jboss.test.ws.jaxws.samples.advanced.retail;
 
-import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 
 /**
  * @author Heiko Braun <heiko.braun@jboss.com>

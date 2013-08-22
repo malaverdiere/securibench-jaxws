@@ -21,17 +21,11 @@
  */
 package org.jboss.test.ws.jaxws.samples.webserviceref;
 
-import java.net.URL;
-
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
-
-import org.jboss.test.ws.jaxws.samples.webserviceref.EJB3Remote;
-
-
+import java.net.URL;
 
 /**
  * Test the JAXWS annotation: javax.xml.ws.WebServiceref
@@ -39,14 +33,9 @@ import org.jboss.test.ws.jaxws.samples.webserviceref.EJB3Remote;
  * @author Thomas.Diesler@jboss.com
  * @since 23-Oct-2005
  */
-public class WebServiceRefEJB3TestCase extends JBossWSTest
+public class WebServiceRefEJB3TestCase extends HttpServlet
 {
-   public final String TARGET_ENDPOINT_ADDRESS = "http://" + getServerHost() + ":8080/jaxws-samples-webserviceref";
-
-   public static Test suite()
-   {
-      return new JBossWSTestSetup(WebServiceRefEJB3TestCase.class, "jaxws-samples-webserviceref.war");
-   }
+   public final String TARGET_ENDPOINT_ADDRESS = "http://localhost:8080/jaxws-samples-webserviceref";
 
    public void testDynamicProxy() throws Exception
    {

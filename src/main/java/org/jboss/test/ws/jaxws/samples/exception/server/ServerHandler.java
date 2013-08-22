@@ -21,7 +21,7 @@
  */
 package org.jboss.test.ws.jaxws.samples.exception.server;
 
-import java.util.Iterator;
+import org.jboss.ws.api.handler.GenericSOAPHandler;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPBody;
@@ -31,8 +31,7 @@ import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-
-import org.jboss.ws.api.handler.GenericSOAPHandler;
+import java.util.Iterator;
 
 /**
  * A simple server side handler applying uppercase function to the error message strings.

@@ -21,9 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.provider;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -32,12 +29,8 @@ import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
 import javax.xml.ws.Service.Mode;
 import javax.xml.ws.http.HTTPBinding;
-
-import junit.framework.Test;
-
-
-
-import org.w3c.dom.Element;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Test a Provider<SOAPMessage>

@@ -21,20 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.webresult;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.SOAPConnection;
-import javax.xml.soap.SOAPConnectionFactory;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.*;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
+import java.io.ByteArrayInputStream;
+import java.net.URL;
 
 
 

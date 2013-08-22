@@ -21,22 +21,15 @@
  */
 package org.jboss.test.ws.jaxws.samples.serviceref;
 
+import org.jboss.wsf.test.JBossWSTestHelper;
+
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
-
-import javax.naming.InitialContext;
-import javax.servlet.http.HttpServlet;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.soap.SOAPBinding;
-
-import junit.framework.Test;
-
-
-import org.jboss.wsf.test.JBossWSTestHelper;
 
 
 /**

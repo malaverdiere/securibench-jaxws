@@ -21,18 +21,15 @@
  */
 package org.jboss.test.ws.jaxws.samples.asynchronous;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.AsyncHandler;
 import javax.xml.ws.Response;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 
 

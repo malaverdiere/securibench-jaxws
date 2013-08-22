@@ -21,18 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.serviceref;
 
-import java.io.InputStream;
-import java.net.URL;
-
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
-
-import org.jboss.test.ws.jaxws.samples.serviceref.EJBRemote;
-
-
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * Test the JAXWS <service-ref>
@@ -40,15 +34,10 @@ import org.jboss.test.ws.jaxws.samples.serviceref.EJBRemote;
  * @author Thomas.Diesler@jboss.com
  * @author <a href="mailto:richard.opalka@jboss.org">Richard Opalka</a>
  */
-public class ServiceRefEJBTestCase extends JBossWSTest
+public class ServiceRefEJBTestCase extends HttpServlet
 {
-   public final String TARGET_ENDPOINT_ADDRESS = "http://" + getServerHost() + ":8080/jaxws-samples-serviceref";
-   
-   public static Test suite()
-   {
-      final String archives = "jaxws-samples-serviceref.war,jaxws-samples-serviceref-ejbclient.jar";
-      return new JBossWSTestSetup(ServiceRefEJBTestCase.class, archives);
-   }
+   public final String TARGET_ENDPOINT_ADDRESS = "http://localhost:8080/jaxws-samples-serviceref";
+
 
    public void testWSDLAccess() throws Exception
    {

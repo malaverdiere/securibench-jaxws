@@ -21,13 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.asynchronous;
 
-import java.io.IOException;
-import java.io.StringReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
@@ -37,12 +30,11 @@ import javax.xml.ws.Dispatch;
 import javax.xml.ws.Response;
 import javax.xml.ws.Service;
 import javax.xml.ws.Service.Mode;
-
-import junit.framework.Test;
-
-
-
-import org.w3c.dom.Element;
+import java.io.StringReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Test JAXWS asynchrous dispatch

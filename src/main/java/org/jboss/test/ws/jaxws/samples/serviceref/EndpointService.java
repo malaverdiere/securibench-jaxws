@@ -21,13 +21,13 @@
  */
 package org.jboss.test.ws.jaxws.samples.serviceref;
 
-import java.io.Serializable;
-import java.net.MalformedURLException;
-import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
 import javax.xml.ws.WebServiceClient;
+import java.io.Serializable;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * JBossWS Generated Source

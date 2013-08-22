@@ -21,19 +21,10 @@
  */
 package org.jboss.test.ws.jaxws.samples.jaxbintros;
 
-import java.net.URL;
-import java.util.Iterator;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
-
-import junit.framework.Test;
-
-import org.jboss.ws.common.DOMUtils;
-
-
-import org.w3c.dom.Element;
+import java.net.URL;
 
 /**
  * Test the JAXBIntroduction features.

@@ -21,13 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.provider;
 
-import org.w3c.dom.Element;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.IOException;
-
 import javax.jws.HandlerChain;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
@@ -41,6 +34,10 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Provider;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceProvider;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  * Test a Provider<Source>

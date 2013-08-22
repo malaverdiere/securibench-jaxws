@@ -21,14 +21,13 @@
  */
 package org.jboss.test.ws.jaxws.samples.swaref;
 
+import javax.activation.DataHandler;
 import javax.ejb.Stateless;
-import javax.jws.WebService;
 import javax.jws.WebMethod;
+import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlAttachmentRef;
 import javax.xml.ws.WebServiceException;
-import javax.activation.DataHandler;
-import java.rmi.RemoteException;
 import java.io.IOException;
 import java.io.InputStream;
 

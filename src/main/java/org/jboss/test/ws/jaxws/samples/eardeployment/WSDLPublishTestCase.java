@@ -21,18 +21,15 @@
  */
 package org.jboss.test.ws.jaxws.samples.eardeployment;
 
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.ws.BindingProvider;
+import javax.xml.ws.Service;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-
-import javax.xml.namespace.QName;
-import javax.xml.ws.BindingProvider;
-import javax.xml.ws.Service;
-
-import junit.framework.Test;
-
 
 
 
@@ -42,16 +39,10 @@ import junit.framework.Test;
  * 
  * @author alessio.soldano@jboss.com
  */
-public class WSDLPublishTestCase extends JBossWSTest
+public class WSDLPublishTestCase extends HttpServlet
 {
    private File wsdlFileDir;
    private static long testStart;
-   
-   public static Test suite()
-   {
-      testStart = System.currentTimeMillis();
-      return new JBossWSTestSetup(WSDLPublishTestCase.class, "jaxws-samples-eardeployment.ear");
-   }
 
    public void testEJB3Endpoint() throws Exception
    {

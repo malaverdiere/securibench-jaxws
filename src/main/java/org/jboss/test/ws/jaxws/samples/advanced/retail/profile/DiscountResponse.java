@@ -21,11 +21,11 @@
  */
 package org.jboss.test.ws.jaxws.samples.advanced.retail.profile;
 
+import org.jboss.test.ws.jaxws.samples.advanced.retail.Customer;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-
-import org.jboss.test.ws.jaxws.samples.advanced.retail.Customer;
 
 /**
  * <p>Java class for discountResponse complex type.

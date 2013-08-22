@@ -21,15 +21,10 @@
  */
 package org.jboss.test.ws.jaxws.samples.swaref;
 
-import junit.framework.Test;
-
-
-
-
-import javax.servlet.http.HttpServlet;
-import javax.xml.ws.Service;
-import javax.xml.namespace.QName;
 import javax.activation.DataHandler;
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
 import java.net.URL;
 
 /**

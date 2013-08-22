@@ -21,9 +21,9 @@
  */
 package org.jboss.test.ws.jaxws.samples.swaref;
 
+import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlAttachmentRef;
 
 @WebService(name = "WrappedEndpoint", serviceName = "WrappedEndpointService")

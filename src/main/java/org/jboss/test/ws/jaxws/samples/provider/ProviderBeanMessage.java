@@ -21,14 +21,14 @@
  */
 package org.jboss.test.ws.jaxws.samples.provider;
 
+import org.w3c.dom.NodeList;
+
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.Provider;
 import javax.xml.ws.Service;
 import javax.xml.ws.ServiceMode;
 import javax.xml.ws.WebServiceProvider;
-
-import org.w3c.dom.NodeList;
 
 /**
  * Test a Provider<SOAPMessage>

@@ -21,20 +21,13 @@
  */
 package org.jboss.test.ws.saaj.jbws3084;
 
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.soap.*;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import javax.xml.namespace.QName;
-import javax.xml.soap.AttachmentPart;
-import javax.xml.soap.MessageFactory;
-import javax.xml.soap.SOAPConnection;
-import javax.xml.soap.SOAPConnectionFactory;
-import javax.xml.soap.SOAPElement;
-import javax.xml.soap.SOAPFactory;
-import javax.xml.soap.SOAPMessage;
-
-import junit.framework.Test;
 
 
 
@@ -44,13 +37,8 @@ import junit.framework.Test;
  *
  * @author sberyozk@redhat.com
  */
-public class JBWS3084TestCase extends JBossWSTest
+public class JBWS3084TestCase extends HttpServlet
 {
-   public static Test suite()
-   {
-      return new JBossWSTestSetup(JBWS3084TestCase.class, "saaj-soap-connection.war");
-   }
-
    public void testSoapConnectionPostWithoutChunkedEncoding() throws Exception
    {
       doTestSoapConnection(true);
@@ -93,7 +81,7 @@ public class JBWS3084TestCase extends JBossWSTest
 
       SOAPConnection con = conFac.createConnection();
 
-      final String serviceURL = "http://" + getServerHost() + ":8080/saaj-soap-connection";
+      final String serviceURL = "http://localhost:8080/saaj-soap-connection";
 
       URL endpoint = new URL(serviceURL);
       SOAPMessage response = con.call(msg, endpoint);

@@ -21,17 +21,14 @@
  */
 package org.jboss.test.ws.jaxws.samples.handlerchain;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
 import javax.xml.ws.handler.Handler;
-
-import junit.framework.Test;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 
 

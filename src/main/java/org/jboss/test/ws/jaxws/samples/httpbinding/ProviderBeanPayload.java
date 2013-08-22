@@ -21,8 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.httpbinding;
 
-import org.w3c.dom.Element;
-
 import javax.jws.HandlerChain;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;

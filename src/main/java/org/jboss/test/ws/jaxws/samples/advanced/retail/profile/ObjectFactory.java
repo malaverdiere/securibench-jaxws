@@ -21,12 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.advanced.retail.profile;
 
+import org.jboss.test.ws.jaxws.samples.advanced.retail.Customer;
+
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
-
-import org.jboss.test.ws.jaxws.samples.advanced.retail.Customer;
 
 /**
  * This object contains factory methods for each 

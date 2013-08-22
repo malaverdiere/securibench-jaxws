@@ -21,18 +21,18 @@
  */
 package org.jboss.test.ws.jaxws.samples.advanced.retail;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Stateless;
-import javax.jws.HandlerChain;
-import javax.jws.WebService;
-import javax.xml.ws.WebServiceRef;
-
 import org.jboss.test.ws.jaxws.samples.advanced.retail.cc.CCVerification;
 import org.jboss.test.ws.jaxws.samples.advanced.retail.cc.CCVerificationService;
 import org.jboss.test.ws.jaxws.samples.advanced.retail.profile.DiscountRequest;
 import org.jboss.test.ws.jaxws.samples.advanced.retail.profile.DiscountResponse;
 import org.jboss.test.ws.jaxws.samples.advanced.retail.profile.ProfileMgmt;
 import org.jboss.test.ws.jaxws.samples.advanced.retail.profile.ProfileMgmtService;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
+import javax.jws.HandlerChain;
+import javax.jws.WebService;
+import javax.xml.ws.WebServiceRef;
 
 /**
  * An example order management component

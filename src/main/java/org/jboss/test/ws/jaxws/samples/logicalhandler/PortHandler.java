@@ -21,7 +21,7 @@
  */
 package org.jboss.test.ws.jaxws.samples.logicalhandler;
 
-import java.util.Iterator;
+import org.jboss.ws.api.handler.GenericSOAPHandler;
 
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPException;
@@ -29,8 +29,7 @@ import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-
-import org.jboss.ws.api.handler.GenericSOAPHandler;
+import java.util.Iterator;
 
 /**
  * A jaxws protocol handler

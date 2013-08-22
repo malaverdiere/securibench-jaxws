@@ -21,9 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.oneway;
 
-import java.io.StringReader;
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
@@ -31,12 +28,8 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
 import javax.xml.ws.Service.Mode;
-
-import junit.framework.Test;
-
-
-
-import org.w3c.dom.Element;
+import java.io.StringReader;
+import java.net.URL;
 
 /**
  * Test the JSR-181 annotation: javax.jws.Oneway

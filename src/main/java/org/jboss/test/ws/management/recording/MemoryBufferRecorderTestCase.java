@@ -21,33 +21,31 @@
  */
 package org.jboss.test.ws.management.recording;
 
-import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
-import javax.management.Attribute;
-import javax.management.MBeanServerConnection;
-import javax.management.ObjectName;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-
+import org.jboss.ws.api.monitoring.Record;
+import org.jboss.ws.api.monitoring.RecordFilter;
 import org.jboss.ws.common.monitoring.AndFilter;
 import org.jboss.ws.common.monitoring.HostFilter;
 import org.jboss.ws.common.monitoring.NotFilter;
 import org.jboss.ws.common.monitoring.OperationFilter;
-import org.jboss.ws.api.monitoring.Record;
-import org.jboss.ws.api.monitoring.RecordFilter;
-
 import org.jboss.wsf.test.JBossWSTestHelper;
 
+import javax.management.Attribute;
+import javax.management.MBeanServerConnection;
+import javax.management.ObjectName;
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 /**
  * This tests the MemoryBufferRecorder
  * 
  * @author alessio.soldano@jboss.com
  * @since 7-Aug-2008
  */
-public class MemoryBufferRecorderTestCase extends JBossWSTest
+public class MemoryBufferRecorderTestCase extends HttpServlet
 {
    private String endpointURL = "http://localhost:8080/management-recording/EndpointImpl";
    private String targetNS = "http://recording.management.ws.test.jboss.org/";

@@ -24,12 +24,7 @@ package org.jboss.test.ws.jaxws.samples.provider;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.util.JAXBSource;
 import javax.xml.transform.Source;
-import javax.xml.ws.BindingType;
-import javax.xml.ws.Provider;
-import javax.xml.ws.Service;
-import javax.xml.ws.ServiceMode;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.WebServiceProvider;
+import javax.xml.ws.*;
 import javax.xml.ws.http.HTTPBinding;
 
 /**

@@ -22,16 +22,15 @@
 package org.jboss.test.ws.jaxws.samples.swaref;
 
 import javax.activation.DataHandler;
+import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.ejb.Stateless;
 import javax.xml.bind.annotation.XmlAttachmentRef;
 import javax.xml.ws.WebServiceException;
-
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.IOException;
 
 @Stateless
 @WebService(name = "WrappedEndpoint", serviceName = "WrappedEndpointService")

@@ -21,11 +21,10 @@
  */
 package org.jboss.test.ws.jaxws.samples.handlerchain;
 
-import java.net.URL;
-
 import javax.jws.HandlerChain;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
+import java.net.URL;
 
 /**
  * @author <a href="mailto:ropalka@redhat.com">Richard Opalka</a>

@@ -21,18 +21,14 @@
  */
 package org.jboss.test.ws.jaxws.samples.webserviceref;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.WebServiceRefs;
-
-import org.jboss.test.ws.jaxws.samples.webserviceref.EndpointService;
-import org.jboss.test.ws.jaxws.samples.webserviceref.Endpoint;
+import java.util.ArrayList;
+import java.util.Hashtable;
 
 // Test on type with wsdlLocation
 @WebServiceRef(name = "service1", value = EndpointService.class, type = EndpointService.class, wsdlLocation = "META-INF/wsdl/Endpoint.wsdl")

@@ -21,9 +21,8 @@
  */
 package org.jboss.test.ws.jaxws.samples.advanced.retail;
 
-import java.io.Serializable;
-
 import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 
 @XmlType(name="customer", namespace = "http://org.jboss.ws/samples/retail", propOrder = {
     "creditCardDetails",

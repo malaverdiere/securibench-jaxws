@@ -21,15 +21,13 @@
  */
 package org.jboss.test.ws.projectGenerator;
 
+import javax.servlet.http.HttpServlet;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
-
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-
-
 
 /**
  * A test case for the user project generator:
@@ -42,7 +40,7 @@ import javax.xml.ws.Service;
  * @author alessio.soldano@jboss.com
  * @since 28-Apr-2008
  */
-public class ProjectGeneratorTestCase extends JBossWSTest
+public class ProjectGeneratorTestCase extends HttpServlet
 {
    private static final String FS = System.getProperty("file.separator"); // '/' on unix, '\' on windows
    private static final String PS = System.getProperty("path.separator"); // ':' on unix, ';' on windows
@@ -51,7 +49,7 @@ public class ProjectGeneratorTestCase extends JBossWSTest
    private File binDistroDir;
    private String projectName = "GeneratorTestProject";
    
-   private String endpointURL = "http://" + getServerHost() + ":8080/" + projectName + "/EndpointService/EndpointImpl";
+   private String endpointURL = "http://localhost:8080/" + projectName + "/EndpointService/EndpointImpl";
    private String targetNS = "http://projectGenerator.ws.test.jboss.org/";
    
    protected void setUp() throws Exception

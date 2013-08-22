@@ -21,9 +21,6 @@
  */
 package org.jboss.test.ws.jaxws.samples.webserviceref;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +29,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.WebServiceRefs;
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 // Test on type with wsdlLocation

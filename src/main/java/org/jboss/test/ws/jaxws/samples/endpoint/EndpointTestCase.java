@@ -21,13 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.endpoint;
 
-import java.net.URL;
-
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Endpoint;
 import javax.xml.ws.Service;
 import javax.xml.ws.soap.SOAPBinding;
+import java.net.URL;
 
 
 

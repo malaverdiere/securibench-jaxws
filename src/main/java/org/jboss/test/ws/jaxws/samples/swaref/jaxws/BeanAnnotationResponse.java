@@ -21,12 +21,9 @@
  */
 package org.jboss.test.ws.jaxws.samples.swaref.jaxws;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import org.jboss.test.ws.jaxws.samples.swaref.DocumentPayload;
+
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "beanAnnotationResponse", namespace = "http://swaref.samples.jaxws.ws.test.jboss.org/")
 @XmlAccessorType(XmlAccessType.FIELD)

@@ -21,13 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.swaref;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.activation.DataHandler;
 import javax.xml.bind.annotation.XmlAttachmentRef;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.List;
 
 @XmlRootElement
 public class DocumentPayloadWithList

@@ -21,8 +21,7 @@
  */
 package org.jboss.test.ws.jaxws.samples.httpbinding;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+import org.jboss.ws.api.handler.GenericLogicalHandler;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
@@ -34,9 +33,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.LogicalMessageContext;
 import javax.xml.ws.handler.MessageContext;
-
-import org.jboss.ws.api.handler.GenericLogicalHandler;
-import org.w3c.dom.Element;
+import java.io.ByteArrayOutputStream;
 
 /**
  * A jaxws logical handler

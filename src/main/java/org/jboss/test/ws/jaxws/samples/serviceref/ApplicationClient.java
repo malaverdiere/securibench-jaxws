@@ -21,13 +21,12 @@
  */
 package org.jboss.test.ws.jaxws.samples.serviceref;
 
-import java.util.ArrayList;
-
 import javax.naming.InitialContext;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.soap.SOAPBinding;
+import java.util.ArrayList;
 
 public class ApplicationClient 
 {
