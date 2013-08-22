@@ -28,6 +28,8 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.URL;
 
+import static org.junit.Assert.*;
+
 /**
  * This test case shows how to dynamically add a custom record processor
  * to a given endpoint.

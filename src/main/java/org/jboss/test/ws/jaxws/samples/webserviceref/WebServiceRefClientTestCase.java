@@ -27,6 +27,9 @@ import javax.xml.ws.Service;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.net.URL;
+
+import static org.junit.Assert.*;
+
 /**
  * Test the JAXWS annotation: javax.xml.ws.WebServiceref
  *

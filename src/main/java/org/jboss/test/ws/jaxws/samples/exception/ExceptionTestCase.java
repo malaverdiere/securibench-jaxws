@@ -23,6 +23,8 @@ package org.jboss.test.ws.jaxws.samples.exception;
 
 import javax.servlet.http.HttpServlet;
 
+import static org.junit.Assert.*;
+
 /**
  * Test JAX-WS exception handling
  *

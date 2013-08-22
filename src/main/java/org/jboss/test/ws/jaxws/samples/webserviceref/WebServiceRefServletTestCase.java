@@ -27,7 +27,7 @@ import javax.xml.ws.Service;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-
+import static org.junit.Assert.*;
 
 /**
  * Test the JAXWS annotation: javax.xml.ws.WebServiceref
@@ -54,7 +54,6 @@ public class WebServiceRefServletTestCase extends HttpServlet
 
    public void testServletClient() throws Exception
    {
-      deploy("jaxws-samples-webserviceref-servlet-client.war");
       try
       {
          URL url = new URL(TARGET_ENDPOINT_ADDRESS + "-servlet-client?echo=HelloWorld");

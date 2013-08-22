@@ -26,6 +26,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import static org.junit.Assert.*;
 public class ExceptionServletTestCase extends HttpServlet
 {
    

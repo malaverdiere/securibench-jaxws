@@ -31,6 +31,8 @@ import java.net.URL;
 
 
 
+import static org.junit.Assert.*;
+
 /**
  * Test the JSR-181 annotation: javax.jws.webresult
  *

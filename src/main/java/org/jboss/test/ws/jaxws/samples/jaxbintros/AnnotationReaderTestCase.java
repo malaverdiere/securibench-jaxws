@@ -31,6 +31,8 @@ import java.util.Collections;
 import java.util.Map;
 
 
+import static org.junit.Assert.*;
+
 /**
  * @author Heiko.Braun@jboss.com
  * @author alessio.soldano@jboss.com

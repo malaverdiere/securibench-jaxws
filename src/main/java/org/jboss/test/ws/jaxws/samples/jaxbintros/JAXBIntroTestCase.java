@@ -26,6 +26,9 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.URL;
 
+
+import static org.junit.Assert.*;
+
 /**
  * Test the JAXBIntroduction features.
  * 

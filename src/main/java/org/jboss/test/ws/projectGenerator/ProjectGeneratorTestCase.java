@@ -28,6 +28,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
+import static org.junit.Assert.*;
 
 /**
  * A test case for the user project generator:

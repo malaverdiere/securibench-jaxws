@@ -27,6 +27,8 @@ import javax.xml.ws.Service;
 import java.net.URL;
 
 
+import static org.junit.Assert.*;
+
 /**
  * @author Heiko Braun <heiko.braun@jboss.com>
  * @since 08-Nov-2006

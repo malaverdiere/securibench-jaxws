@@ -28,7 +28,7 @@ import javax.xml.ws.Service;
 import javax.xml.ws.soap.SOAPBinding;
 import java.net.URL;
 
-
+import static org.junit.Assert.*;
 
 /**
  * Tests JAXWS dynamic endpoint deployment in an JSE environment.

@@ -34,7 +34,7 @@ import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 import java.net.URL;
 
-
+import static org.junit.Assert.*;
 
 
 /**

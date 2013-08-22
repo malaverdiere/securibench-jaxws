@@ -26,6 +26,7 @@ import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.URL;
+import static org.junit.Assert.*;
 
 /**
  * Test the JAXWS annotation: javax.xml.ws.WebServiceref

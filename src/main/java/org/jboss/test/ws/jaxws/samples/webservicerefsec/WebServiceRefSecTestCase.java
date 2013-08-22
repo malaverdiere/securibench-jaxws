@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServlet;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-
+import static org.junit.Assert.*;
 
 /**
  * Test multiple webserviceref fro the same endpoint with different security credentials

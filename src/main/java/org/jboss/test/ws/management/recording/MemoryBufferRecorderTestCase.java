@@ -39,6 +39,7 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import static org.junit.Assert.*;
 /**
  * This tests the MemoryBufferRecorder
  * 

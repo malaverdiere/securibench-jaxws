@@ -28,6 +28,7 @@ import javax.xml.ws.Service;
 import java.net.URL;
 
 
+import static org.junit.Assert.*;
 
 
 /**

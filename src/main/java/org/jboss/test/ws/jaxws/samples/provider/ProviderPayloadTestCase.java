@@ -35,6 +35,7 @@ import javax.xml.ws.soap.SOAPBinding;
 import java.io.ByteArrayInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import static org.junit.Assert.*;
 /**
  * Test a Provider<SOAPMessage>
  *

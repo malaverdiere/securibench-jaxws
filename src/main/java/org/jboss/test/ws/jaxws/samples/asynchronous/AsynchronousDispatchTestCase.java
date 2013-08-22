@@ -36,6 +36,8 @@ import java.net.URL;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.*;
+
 /**
  * Test JAXWS asynchrous dispatch
  *

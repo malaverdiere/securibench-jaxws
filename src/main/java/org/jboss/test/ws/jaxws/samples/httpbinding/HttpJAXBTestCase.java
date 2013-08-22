@@ -32,6 +32,9 @@ import javax.xml.ws.http.HTTPBinding;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
+import static org.junit.Assert.*;
+
 /**
  * Test HTTP Binding
  *

@@ -32,6 +32,7 @@ import java.net.URL;
 
 
 
+import static org.junit.Assert.*;
 
 /**
  * Test ear deployment
