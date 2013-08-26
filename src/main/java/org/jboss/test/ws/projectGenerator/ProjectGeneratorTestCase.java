@@ -21,6 +21,8 @@
  */
 package org.jboss.test.ws.projectGenerator;
 
+import org.junit.Before;
+
 import javax.servlet.http.HttpServlet;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -29,6 +31,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.net.URL;
 import static org.junit.Assert.*;
+
+import static org.jboss.wsf.test.JBossWSTestHelper.*;
 
 /**
  * A test case for the user project generator:
@@ -52,10 +56,10 @@ public class ProjectGeneratorTestCase extends HttpServlet
    
    private String endpointURL = "http://localhost:8080/" + projectName + "/EndpointService/EndpointImpl";
    private String targetNS = "http://projectGenerator.ws.test.jboss.org/";
-   
+
+   @Before
    protected void setUp() throws Exception
    {
-      super.setUp();
       jbossHome = System.getProperty("jboss.home").replace('\\', '/');
       binDistroDir = new File(System.getProperty("user.dir"), "..");
    }

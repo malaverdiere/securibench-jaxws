@@ -70,7 +70,6 @@ public class WebServiceRefClientTestCase extends HttpServlet
    {
       final String appclientArg = "Hello World!";
       final OutputStream appclientOS = new ByteArrayOutputStream();
-      final Process appclientProcess = JBossWSTestHelper.deployAppclient("jaxws-samples-webserviceref-appclient.ear#jaxws-samples-webserviceref-appclient.jar", appclientOS, appclientArg);
       // wait till appclient stops
       String appclientLog = appclientOS.toString();
       while (!appclientLog.contains("stopped in")) {

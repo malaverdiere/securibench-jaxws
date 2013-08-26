@@ -21,11 +21,15 @@
  */
 package org.jboss.test.ws.jaxws.samples.endpoint;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Endpoint;
 import javax.xml.ws.Service;
 import javax.xml.ws.soap.SOAPBinding;
+import java.io.IOException;
 import java.net.URL;
 
 import static org.junit.Assert.*;
@@ -39,19 +43,23 @@ public class EndpointTestCase extends HttpServlet
 {
    private static final int port = 8878;
 
-   public void test() throws Exception
-   {
-      String publishURL1 = "http://localhost:" + port + "/jaxws-endpoint1";
-      Endpoint endpoint1 = publishEndpoint(new EndpointBean(), publishURL1);
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-      String publishURL2 = "http://localhost:" + port + "/jaxws-endpoint2";
-      Endpoint endpoint2 = publishEndpoint(new EndpointBean(), publishURL2);
+        final String param = req.getParameter("abc");
+            try{
+          String publishURL1 = "http://localhost:" + port + "/jaxws-endpoint1";
+          Endpoint endpoint1 = publishEndpoint(new EndpointBean(), publishURL1);
 
-      invokeEndpoint(publishURL1);
-      invokeEndpoint(publishURL2);
+          String publishURL2 = "http://localhost:" + port + "/jaxws-endpoint2";
+          Endpoint endpoint2 = publishEndpoint(new EndpointBean(), publishURL2);
 
-      endpoint1.stop();
-      endpoint2.stop();
+          invokeEndpoint(publishURL1, param);
+          invokeEndpoint(publishURL2, param);
+
+          endpoint1.stop();
+          endpoint2.stop();
+        } catch (Exception e){fail("Exception raised: "+ e.getMessage());}
    }
 
    private Endpoint publishEndpoint(EndpointBean epImpl, String publishURL)
@@ -61,7 +69,7 @@ public class EndpointTestCase extends HttpServlet
       return endpoint;
    }
 
-   private void invokeEndpoint(String publishURL) throws Exception
+   private void invokeEndpoint(String publishURL, String param) throws Exception
    {
       URL wsdlURL = new URL(publishURL + "?wsdl");
       QName qname = new QName("http://org.jboss.ws/jaxws/endpoint/", "EndpointService");
@@ -69,12 +77,11 @@ public class EndpointTestCase extends HttpServlet
       EndpointInterface port = (EndpointInterface)service.getPort(EndpointInterface.class);
 
       // Invoke the endpoint
-      String helloWorld = "Hello world!";
       assertEquals(0, port.getCount());
-      Object retObj = port.echo(helloWorld);
-      assertEquals(helloWorld, retObj);
+      Object retObj = port.echo(param);
+      assertEquals(param, retObj);
       assertEquals(1, port.getCount());
-      port.echo(helloWorld);
+      port.echo(param);
       assertEquals(2, port.getCount());
    }
 }

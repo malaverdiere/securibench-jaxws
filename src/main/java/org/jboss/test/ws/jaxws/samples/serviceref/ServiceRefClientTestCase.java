@@ -32,6 +32,8 @@ import java.io.OutputStream;
 import java.net.URL;
 
 import static org.junit.Assert.*;
+import static org.jboss.wsf.test.JBossWSTestHelper.*;
+
 /**
  * Test the JAXWS <service-ref>
  *
@@ -65,7 +67,6 @@ public class ServiceRefClientTestCase extends HttpServlet
    public void testApplicationClient() throws Exception
    {
       final OutputStream appclientOS = new ByteArrayOutputStream();
-      JBossWSTestHelper.deployAppclient("jaxws-samples-serviceref-appclient.ear#jaxws-samples-serviceref-appclient.jar", appclientOS, "Hello World!");
       // wait till appclient stops
       String appclientLog = appclientOS.toString();
       while (!appclientLog.contains("stopped in")) {

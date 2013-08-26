@@ -21,10 +21,15 @@
  */
 package org.jboss.test.ws.jaxws.samples.context;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
+import java.io.IOException;
 import java.net.URL;
 
 import static org.junit.Assert.*;
@@ -36,11 +41,25 @@ import static org.junit.Assert.*;
  * @author Thomas.Diesler@jboss.org
  * @since 29-Apr-2005
  */
+@WebServlet(name="context/WebServiceContextEJBTestCase", value="context/WebServiceContextEJBTestCase")
 public class WebServiceContextEJBTestCase extends HttpServlet
 {
    private Endpoint port;
 
-   public void setUp() throws Exception
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            setUp();
+            testGetUserPrincipal();
+            testGetWebContext();
+            testIsUserInRole();
+            testMessageContextProperties();
+        } catch (Exception e) {
+            fail("Exception raised: " + e.getMessage());
+        }
+    }
+
+    public void setUp() throws Exception
    {
       if (port == null)
       {

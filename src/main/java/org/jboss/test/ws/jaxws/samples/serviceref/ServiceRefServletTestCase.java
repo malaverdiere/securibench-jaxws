@@ -32,6 +32,8 @@ import java.net.URL;
 
 import static org.junit.Assert.*;
 
+import static org.jboss.wsf.test.JBossWSTestHelper.*;
+
 /**
  * Test the JAXWS <service-ref>
  *

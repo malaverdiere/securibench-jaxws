@@ -28,6 +28,8 @@ import javax.xml.ws.Service;
 import java.net.URL;
 import static org.junit.Assert.*;
 
+import static org.jboss.wsf.test.JBossWSTestHelper.*;
+
 /**
  * Test the JAXWS annotation: javax.xml.ws.WebServiceref
  *
@@ -53,23 +55,20 @@ public class WebServiceRefEJB3TestCase extends HttpServlet
    public void testEJB3Client() throws Exception
    {
       InitialContext iniCtx = null;
-      deploy("jaxws-samples-webserviceref-ejb3-client.jar");
-      try
-      {
-         iniCtx = getServerInitialContext();
-         EJB3Remote ejb3Remote = (EJB3Remote)iniCtx.lookup("ejb:/jaxws-samples-webserviceref-ejb3-client//EJB3Client!" + EJB3Remote.class.getName());
 
-         String helloWorld = "Hello World!";
-         Object retObj = ejb3Remote.echo(helloWorld);
-         assertEquals(helloWorld, retObj);
-      }
-      finally
-      {
-         if (iniCtx != null)
-         {
-            iniCtx.close();
-         }
-         undeploy("jaxws-samples-webserviceref-ejb3-client.jar");
-      }
+
+     iniCtx = getServerInitialContext();
+     EJB3Remote ejb3Remote = (EJB3Remote)iniCtx.lookup("ejb:/jaxws-samples-webserviceref-ejb3-client//EJB3Client!" + EJB3Remote.class.getName());
+
+     String helloWorld = "Hello World!";
+     Object retObj = ejb3Remote.echo(helloWorld);
+     assertEquals(helloWorld, retObj);
+
+
+     if (iniCtx != null)
+     {
+        iniCtx.close();
+     }
+
    }
 }

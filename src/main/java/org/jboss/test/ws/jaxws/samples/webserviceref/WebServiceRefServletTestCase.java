@@ -54,16 +54,11 @@ public class WebServiceRefServletTestCase extends HttpServlet
 
    public void testServletClient() throws Exception
    {
-      try
-      {
-         URL url = new URL(TARGET_ENDPOINT_ADDRESS + "-servlet-client?echo=HelloWorld");
-         BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-         String retStr = br.readLine();
-         assertEquals("HelloWorld", retStr);
-      }
-      finally
-      {
-         undeploy("jaxws-samples-webserviceref-servlet-client.war");
-      }
+
+     URL url = new URL(TARGET_ENDPOINT_ADDRESS + "-servlet-client?echo=HelloWorld");
+     BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+     String retStr = br.readLine();
+     assertEquals("HelloWorld", retStr);
+
    }
 }

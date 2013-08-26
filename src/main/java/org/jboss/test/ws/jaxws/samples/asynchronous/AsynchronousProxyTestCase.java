@@ -21,11 +21,16 @@
  */
 package org.jboss.test.ws.jaxws.samples.asynchronous;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.namespace.QName;
 import javax.xml.ws.AsyncHandler;
 import javax.xml.ws.Response;
 import javax.xml.ws.Service;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.Future;
@@ -41,30 +46,45 @@ import static org.junit.Assert.*;
  * @author Thomas.Diesler@jboss.org
  * @since 12-Aug-2006
  */
+@WebServlet(name="asynchronous/AsynchronousProxyTestCase", value="asynchronous/AsynchronousProxyTestCase")
 public class AsynchronousProxyTestCase extends HttpServlet
 {
    private String targetNS = "http://org.jboss.ws/jaxws/asynchronous";
    private Exception handlerException;
    private boolean asyncHandlerCalled;
 
-   public void testInvokeSync() throws Exception
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        final String param = req.getParameter("abc");
+
+        try {
+            testInvokeAsync(param);
+            testInvokeSync(param);
+            testInvokeAsyncHandler(param);
+        } catch (Exception e) {
+            fail("Exception occured: "+ e.getMessage());
+        }
+    }
+
+    public void testInvokeSync(final String param) throws Exception
    {
       Endpoint port = createProxy();
-      String retStr = port.echo("Hello");
-      assertEquals("Hello", retStr);
+      String retStr = port.echo(param);
+      assertEquals(param, retStr);
    }
 
-   public void testInvokeAsync() throws Exception
+   public void testInvokeAsync(final String param) throws Exception
    {
       Endpoint port = createProxy();
-      Response response = port.echoAsync("Async");
+      Response response = port.echoAsync(param);
 
       // access future
       String retStr = (String) response.get();
-      assertEquals("Async", retStr);
+      assertEquals(param, retStr);
    }
 
-   public void testInvokeAsyncHandler() throws Exception
+   public void testInvokeAsyncHandler(final String param) throws Exception
    {
       AsyncHandler<String> handler = new AsyncHandler<String>()
       {
@@ -72,9 +92,8 @@ public class AsynchronousProxyTestCase extends HttpServlet
          {
             try
             {
-               System.out.println("AsyncHandler.handleResponse() method called");
                String retStr = (String) response.get(5000, TimeUnit.MILLISECONDS);
-               assertEquals("Hello", retStr);
+               assertEquals(param, retStr);
                asyncHandlerCalled = true;
             }
             catch (Exception ex)
@@ -85,11 +104,8 @@ public class AsynchronousProxyTestCase extends HttpServlet
       };
 
       Endpoint port = createProxy();
-      Future future = port.echoAsync("Hello", handler);
-      long start = System.currentTimeMillis();
+      Future future = port.echoAsync(param, handler);
       future.get(5000, TimeUnit.MILLISECONDS);
-      long end = System.currentTimeMillis();
-      System.out.println("Time spent in future.get() was " + (end - start) + "milliseconds");
 
       if (handlerException != null)
          throw handlerException;

@@ -40,17 +40,11 @@ public class WebServiceRefSecTestCase extends HttpServlet
 
    public void testServletClient() throws Exception
    {
-      deploy("jaxws-samples-webservicerefsec-servlet-client.war");
-      try
-      {
-         URL url = new URL(TARGET_ENDPOINT_ADDRESS + "-servlet-client?echo=HelloWorld");
-         BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-         String retStr = br.readLine();
-         assertEquals("HelloWorld", retStr);
-      }
-      finally
-      {
-         undeploy("jaxws-samples-webservicerefsec-servlet-client.war");
-      }
+
+     URL url = new URL(TARGET_ENDPOINT_ADDRESS + "-servlet-client?echo=HelloWorld");
+     BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+     String retStr = br.readLine();
+     assertEquals("HelloWorld", retStr);
+
    }
 }
