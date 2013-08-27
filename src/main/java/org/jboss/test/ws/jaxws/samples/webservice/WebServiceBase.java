@@ -67,7 +67,7 @@ public class WebServiceBase extends HttpServlet
             webServiceWsdlLocationTest("abc");
             webServiceEndpointInterfaceTest("abc");
         } catch (Exception e){
-
+          fail("Exception raised: " + e.getMessage());
         }
     }
 

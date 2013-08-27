@@ -22,7 +22,9 @@ libraryDependencies ++= Seq(
 libraryDependencies ++= Seq(
   "javax.xml.ws" % "jaxws-api" % "2.2.11" intransitive(),
   "javax.xml.bind" % "jaxb-api" % "2.2.9" intransitive(),
-  "javax" % "javaee-api" % "6.0" intransitive()
+  "wsdl4j" % "wsdl4j" % "1.6.3",
+  "javax.ejb" % "ejb-api" % "3.0",
+  "javax.annotation" % "jsr250-api" % "1.0"
 )
 
 libraryDependencies += "junit" % "junit" % "4.11"

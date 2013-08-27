@@ -21,6 +21,8 @@
  */
 package org.jboss.test.ws.jaxws.samples.asynchronous;
 
+import ca.polymtl.gigl.casi.TestHelperServlet;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,6 +42,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 
+
 /**
  * Test JAXWS asynchrous proxy
  *
@@ -47,7 +50,7 @@ import static org.junit.Assert.*;
  * @since 12-Aug-2006
  */
 @WebServlet(name="asynchronous/AsynchronousProxyTestCase", value="asynchronous/AsynchronousProxyTestCase")
-public class AsynchronousProxyTestCase extends HttpServlet
+public class AsynchronousProxyTestCase extends TestHelperServlet
 {
    private String targetNS = "http://org.jboss.ws/jaxws/asynchronous";
    private Exception handlerException;
@@ -63,21 +66,22 @@ public class AsynchronousProxyTestCase extends HttpServlet
             testInvokeSync(param);
             testInvokeAsyncHandler(param);
         } catch (Exception e) {
-            fail("Exception occured: "+ e.getMessage());
+            e.printStackTrace();
+            fail("Exception occured: " + e.getMessage());
         }
     }
 
     public void testInvokeSync(final String param) throws Exception
    {
-      Endpoint port = createProxy();
-      String retStr = port.echo(param);
+      Endpoint portProx = createProxy(serverPort);
+      String retStr = portProx.echo(param);
       assertEquals(param, retStr);
    }
 
    public void testInvokeAsync(final String param) throws Exception
    {
-      Endpoint port = createProxy();
-      Response response = port.echoAsync(param);
+      Endpoint portProxy = createProxy(serverPort);
+      Response response = portProxy.echoAsync(param);
 
       // access future
       String retStr = (String) response.get();
@@ -103,8 +107,8 @@ public class AsynchronousProxyTestCase extends HttpServlet
          }
       };
 
-      Endpoint port = createProxy();
-      Future future = port.echoAsync(param, handler);
+      Endpoint portProxy = createProxy(serverPort);
+      Future future = portProxy.echoAsync(param, handler);
       future.get(5000, TimeUnit.MILLISECONDS);
 
       if (handlerException != null)
@@ -113,9 +117,9 @@ public class AsynchronousProxyTestCase extends HttpServlet
       assertTrue("Async handler called", asyncHandlerCalled);
    }
 
-   private Endpoint createProxy() throws MalformedURLException
+   private Endpoint createProxy(final int port) throws MalformedURLException
    {
-      URL wsdlURL = new URL("http://localhost:8080/jaxws-samples-asynchronous?wsdl");
+      URL wsdlURL = new URL("http://localhost:"+port+"/jaxws-samples-asynchronous?wsdl");
       QName serviceName = new QName(targetNS, "EndpointBeanService");
       Service service = Service.create(wsdlURL, serviceName);
       return (Endpoint)service.getPort(Endpoint.class);
